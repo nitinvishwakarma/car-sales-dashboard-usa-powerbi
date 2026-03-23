@@ -31,27 +31,6 @@ dim_Date ───────┘
 
 ---
 
-## DAX Measures Used
-```dax
--- Year to Date Sales
-YTD Sales = TOTALYTD(SUM(Sales[Amount]), Calendar[Date])
-
--- Month to Date Sales
-MTD Sales = TOTALMTD(SUM(Sales[Amount]), Calendar[Date])
-
--- Year over Year Growth
-YOY Growth % = 
-DIVIDE(
-    [YTD Sales] - [PYTD Sales],
-    [PYTD Sales]
-) * 100
-
--- % of Grand Total
-% GT = DIVIDE([Total Sales], CALCULATE([Total Sales], ALL(Cars)))
-```
-
----
-
 ## Screenshots
 
 ### Dashboard Overview
