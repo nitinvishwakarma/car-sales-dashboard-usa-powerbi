@@ -53,9 +53,18 @@ DIVIDE(
 
 ---
 
-## Screenshots
+### Dashboard Overview
+![Dashboard Overview](Screenshot(1)-Car%20Sales%20Dashboard%20Overview.jpg)
 
-![Dashboard Overview](screenshots/overview.jpg)
+### Dashboard Details
+![Dashboard Details](Screenshot(1)-Car%20Sales%20Dashboard%20Details.jpg)
+
+---
+
+## Live Report
+
+> Power BI Service embedding is restricted on this account.
+> Full dashboard screenshots are available below and in this repository.
 
 ---
 
