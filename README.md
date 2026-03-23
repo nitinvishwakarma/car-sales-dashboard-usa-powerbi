@@ -9,7 +9,76 @@ This project involved developing a comprehensive Power BI solution for automotiv
 * **Report Interactivity:** Designed **drillthrough reports** linking executive summaries to granular transaction detail pages (Car ID, Dealer, Model).
 * **Advanced Visuals:** Created a geographic dealer region bubble map and a company-wise sales trend matrix using %GT calculated measures.
 
+---
+
+## Data Model — Star Schema
+```
+dim_Car ────────┐
+dim_Dealer ─────┤
+dim_Customer ───┼──── fact_Sales
+dim_Date ───────┘
+```
+
+---
+
+## Features Built
+
+- Star schema model with Car, Dealer, Customer, Date tables
+- YTD, MTD, and YOY DAX time intelligence measures
+- Drillthrough reports for dealer-level analysis
+- Cascading filters across brand, region, and time
+- Dealer region map visual across USA
+- Percentage of grand total matrix across 20+ brands
+
+---
+
+## DAX Measures Used
+```dax
+-- Year to Date Sales
+YTD Sales = TOTALYTD(SUM(Sales[Amount]), Calendar[Date])
+
+-- Month to Date Sales
+MTD Sales = TOTALMTD(SUM(Sales[Amount]), Calendar[Date])
+
+-- Year over Year Growth
+YOY Growth % = 
+DIVIDE(
+    [YTD Sales] - [PYTD Sales],
+    [PYTD Sales]
+) * 100
+
+-- % of Grand Total
+% GT = DIVIDE([Total Sales], CALCULATE([Total Sales], ALL(Cars)))
+```
+
+---
+
+## Screenshots
+
+![Dashboard Overview](screenshots/overview.jpg)
+
+---
+
 ## Tools Used
 * Power BI Desktop
 * DAX (Time Intelligence & Star Schema relationships)
 * Power Query for data transformation
+
+---
+
+# Car Sales Dashboard — USA
+### Tools: Power BI | DAX | Star Schema
+
+---
+  
+## Files in This Repository
+
+| File | Description |
+|---|---|
+| car_sales_dashboard.pbix | Power BI dashboard file |
+| dataset.csv | Raw car sales dataset |
+| screenshots/ | Dashboard screenshots |
+
+---
+
+*Project by Nitin | Power BI Developer*
